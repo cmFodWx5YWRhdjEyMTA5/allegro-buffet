@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Allegro Buffet - Quem Somos</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index,follow" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+    <meta name="language" content="pt" />
+    <meta name="keywords" content="eventos, festa, bodas, casamento, cerimonia, debutante, festa de 15 anos, confraternizacao, festa empresarial, decoração de festa, decoracao de casamento, decoracao de debutante, bolo de noiva, bolo de casamento, salão de festas, finger food, grastronomia, fork food, petit menu, decoracao de mesa, flores, salgados, empanadas, coquetel, jantar, canapés, bolo artesanal, sorvete artesanal, mesa de frios e frutas, doces gourmet, mesa de café, sao caetano do sul, grande abc" />
+    <meta name="description" content="Fundado em 2000, o Allegro Buffet busca constantemente aliar tradição e modernidade, com requinte e elegância. Com mais de uma década no mercado, já foram realizados mais de 1500 eventos inesquecíveis. O Allegro Buffet oferece diversas possibilidades de serviços e cardápios, todos elaborados em cozinha própria e idealizados pelo Chef Vitor Coelho. Com uma estrutura de aproximadamente 1600m2 de área construída, o espaço disponibiliza dois salões totalmente independentes que acomodam de 100 a 290 pessoas para jantar, podendo adequar os dois salões para um único evento, como Cerimonia no salão térreo e recepção no salão superior." />
+    <meta name="author" content="Primeira Impressao Design" />
+    <meta name="copyright" content="(c) 2013" />
+
+    <script language="javascript" type="text/javascript">
+        if(typeof STATE_STARTED == 'undefined' ) {
+            window.location.href = 'index.html?rp=quemsomos';
+        }
+    </script>
+
+    <link rel='stylesheet' href='css/supersized.css' type='text/css' />
+    
+    <script type="text/javascript">
+            function Maranello2() {
+                    $('#menu ul li a').removeClass('ativo');
+                    $('#btn_pisomaranello').addClass('ativo');
+            }
+
+            function Veneto2() {
+                    $('#menu ul li a').removeClass('ativo');
+                    $('#btn_pisoveneto').addClass('ativo');
+            }
+
+            $(document).ready(function(){
+
+            var wh = $(window).height();	
+			var video = wh - 50;
+
+			$("#video_quemsomos").css('height', video);
+
+            });
+			
+			window.onresize = function () {
+			
+			var wh = $(window).height();	
+			var video = wh - 50;
+
+			$("#video_quemsomos").css('height', video);
+
+	  }
+
+    </script>
+
+  </head>
+
+  <body>
+  
+  <h1 class="seo">Allegro Buffet - Quem Somos</h1>
+  
+    <div id="container">
+
+      <iframe id="video_quemsomos" src="http://player.vimeo.com/video/65795304?title=0&byline=0&portrait=0&autoplay=1" height="95%" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+
+      <div id="lateral" class="not-slideshow">
+        <div id="txt_lateral">
+        QUEM<BR />
+        <span class="tit_destaque">SOMOS</span>
+        </div>
+
+        <div id="texto">
+                  <span class="maior">Fundado em 2000</span>, o Allegro Buffet busca constantemente aliar tradição e modernidade, com requinte e elegância. Com mais de uma década no mercado, já foram realizados mais de 1500 eventos inesquecíveis.<BR /><BR />
+
+  Seu charme , glamour e sofisticação trazem exclusividade e diferenciação para o seu evento.<BR /><BR />
+
+  O Allegro Buffet oferece diversas possibilidades de serviços e cardápios, todos elaborados em cozinha própria e idealizados pelo Chef Vitor Coelho.<BR /><BR />
+
+  Com uma estrutura de aproximadamente 1600m2 de área construída, o espaço disponibiliza dois salões totalmente independentes que acomodam de 100 a 290 pessoas para jantar, podendo adequar os dois salões para um único evento, como Cerimonia  no salão térreo e recepção no salão superior.
+        </div>
+
+        <div id="video">
+        <a class="youtube" href="http://www.youtube.com/embed/yZ9JewontNU?rel=0&amp;wmode=transparent&amp;autoplay=1"><img src="images/quemsomos_video.png" border="0" /></a>
+        </div>
+
+        <div id="pisos">
+        <a><img src="images/quemsomos_pisos.png" border="0" usemap="#Map" />
+          <map name="Map" id="Map">
+            <area shape="rect" coords="1,1,122,35" href="#pisomaranello" onclick="Maranello2();" />
+            <area shape="rect" coords="0,35,106,64" href="#pisoveneto" onclick="Veneto2();"/>
+          </map>
+         </a>
+        </div>
+
+    </div>
+  </body>
+</html>

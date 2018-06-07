@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Allegro Buffet</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="index,follow" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+    <meta name="language" content="pt" />
+    <meta name="keywords" content="eventos, festa, bodas, casamento, cerimonia, debutante, festa de 15 anos, confraternizacao, festa empresarial, decoração de festa, decoracao de casamento, decoracao de debutante, bolo de noiva, bolo de casamento, salão de festas, finger food, grastronomia, fork food, petit menu, decoracao de mesa, flores, salgados, empanadas, coquetel, jantar, canapés, bolo artesanal, sorvete artesanal, mesa de frios e frutas, doces gourmet, mesa de café, sao caetano do sul, grande abc" />
+    <meta name="description" content="Fundado em 2000, o Allegro Buffet busca constantemente aliar tradição e modernidade, com requinte e elegância. Com mais de uma década no mercado, já foram realizados mais de 1500 eventos inesquecíveis. O Allegro Buffet oferece diversas possibilidades de serviços e cardápios, todos elaborados em cozinha própria e idealizados pelo Chef Vitor Coelho. Com uma estrutura de aproximadamente 1600m2 de área construída, o espaço disponibiliza dois salões totalmente independentes que acomodam de 100 a 290 pessoas para jantar, podendo adequar os dois salões para um único evento, como Cerimonia no salão térreo e recepção no salão superior." />
+    <meta name="author" content="Primeira Impressao Design" />
+    <meta name="copyright" content="(c) 2013" />
+
+    <link rel='stylesheet' href='css/stylesheet.css' type='text/css' />
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/jquery.ba-bbq.min.js"></script>
+    <script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+
+    <script language="javascript" type="text/javascript">
+      // gerencia se as libs foram iniciadas
+      var STATE_STARTED = true;
+
+      // lembra o redirecionamento para acesso direto a pagina
+      var REDIRECT_TO = "";
+
+      function TrocaMenuHome() {
+        $('#menu_total').fadeOut(200);
+        $('#menu_home').fadeIn(500);
+      }
+
+      function Maranello() {
+        $('#menu_home').fadeOut(200);
+        $('#menu_total').fadeIn(500);
+        $('#menu ul li a').removeClass('ativo');
+        $('#btn_pisomaranello').addClass('ativo');
+      }
+
+      function Veneto() {
+        $('#menu_home').fadeOut(200);
+        $('#menu_total').fadeIn(500);
+        $('#menu ul li a').removeClass('ativo');
+        $('#btn_pisoveneto').addClass('ativo');
+      }
+
+      $(document).ready(function(){
+        $('#home_maranello').mouseover(function() {
+          $("#home_maranello").addClass('home_over');
+        });
+
+        $('#home_maranello').mouseout(function() {
+          $("#home_maranello").removeClass('home_over');
+        });
+
+        $('#home_veneto').mouseover(function() {
+          $("#home_veneto").addClass('home_over');
+        });
+
+        $('#home_veneto').mouseout(function() {
+          $("#home_veneto").removeClass('home_over');
+        });
+      });
+
+      $(function() {
+        if(REDIRECT_TO != "") {
+          var hashtag = REDIRECT_TO;
+
+          REDIRECT_TO = "";
+
+          if(hashtag=='pisomaranello') {
+            /*  
+            $('#home_maranello').click();
+            Maranello();
+
+            $('#pisomaranello').click();
+            */
+           
+            var tm = setTimeout(function(){ 
+                $('#home_maranello').click();
+                Maranello();
+                $(location).attr('href', '#' + hashtag);
+
+                clearTimeout(tm);
+            }, 1000);
+          }
+          else if(hashtag=='pisoveneto') {
+              /*
+            $('#home_veneto').click();
+            Veneto();
+            $('#pisoveneto').click();
+                */
+               
+            var tm = setTimeout(function(){ 
+                $('#home_veneto').click();
+                Veneto();
+                
+                $(location).attr('href', '#' + hashtag);
+
+                clearTimeout(tm);
+            }, 1000);
+          }
+          else {
+              /*
+            $('#home_maranello').click();
+            Maranello();
+
+            $('#pisomaranello').click();
+
+            $('#btn_' + hashtag).click();
+            */
+           
+            var tm = setTimeout(function(){ 
+                 $('#home_maranello').click();
+                  Maranello();
+
+                 $('#btn_' + hashtag).click();
+
+                 clearTimeout(tm);
+             }, 1000);
+          }
+          
+            //$(location).attr('href', '#' + hashtag);
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <div id="menu">
+      <ul id="menu_home">
+        <li><a href="#pisomaranello" onclick="Maranello();" id="home_maranello">ESPAÇO MARANELLO</a></li>
+        <li class="abaixo"><a href="#pisoveneto" onclick="Veneto();" id="home_veneto">ESPAÇO VENETO</a></li>
+      </ul>
+
+      <ul id="menu_total">
+        <li class="fb-icon"><a href="http://www.facebook.com/AllegroBuffet" target="_blank" class="fb icons"><img src="images/facebook.png" border="0" /></a></li>
+        <li class="yt-icon"><a href="http://www.youtube.com/user/CanalAllegroBuffet" target="_blank" class="yt icons"><img src="images/youtube.png" border="0" /></a></li>
+
+        <li><a href="#quemsomos" id="btn_quemsomos">QUEM SOMOS</a></li>
+        <li><a href="#eventossociais" id="btn_eventossociais">EVENTOS SOCIAIS</a></li>
+        <li><a href="#eventoscorp" id="btn_eventoscorp">EVENTOS CORPORATIVOS</a></li>
+        <li><a href="#gastronomia" id="btn_gastronomia">GASTRONOMIA</a></li>
+        <li><a href="#pisomaranello" id="btn_pisomaranello">PISO MARANELLO</a></li>
+        <li><a href="#pisoveneto" id="btn_pisoveneto">PISO VENETO</a></li>
+        <li><a href="#contato" id="btn_contato" class="ultima">CONTATO</a></li>
+      </ul>
+
+      <div id="logo">
+        <a href="#home" id="home" onclick="TrocaMenuHome();"><img src="images/logo.png" border="0"></a></div>
+      </div>
+
+      <div id="clear"></div>
+    </div>
+
+    <div id="st_loading" class="st_loading"></div>
+
+    <div id="content"></div>
+</body>
+</html>

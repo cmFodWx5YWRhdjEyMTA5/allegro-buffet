@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Allegro Buffet - Home</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="robots" content="index,follow" />
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+<META HTTP-EQUIV="Expires" CONTENT="-1">
+    <meta name="language" content="pt" />
+    <meta name="keywords" content="eventos, festa, bodas, casamento, cerimonia, debutante, festa de 15 anos, confraternizacao, festa empresarial, decoração de festa, decoracao de casamento, decoracao de debutante, bolo de noiva, bolo de casamento, salão de festas, finger food, grastronomia, fork food, petit menu, decoracao de mesa, flores, salgados, empanadas, coquetel, jantar, canapés, bolo artesanal, sorvete artesanal, mesa de frios e frutas, doces gourmet, mesa de café, sao caetano do sul, grande abc" />
+    <meta name="description" content="Fundado em 2000, o Allegro Buffet busca constantemente aliar tradição e modernidade, com requinte e elegância. Com mais de uma década no mercado, já foram realizados mais de 1500 eventos inesquecíveis. O Allegro Buffet oferece diversas possibilidades de serviços e cardápios, todos elaborados em cozinha própria e idealizados pelo Chef Vitor Coelho. Com uma estrutura de aproximadamente 1600m2 de área construída, o espaço disponibiliza dois salões totalmente independentes que acomodam de 100 a 290 pessoas para jantar, podendo adequar os dois salões para um único evento, como Cerimonia no salão térreo e recepção no salão superior." />
+    <meta name="author" content="Primeira Impressao Design" />
+    <meta name="copyright" content="(c) 2013" />
+
+    <script language="javascript" type="text/javascript">
+      if(typeof STATE_STARTED == 'undefined' ) {
+        window.location.href = 'index.html';
+      }
+    </script>
+
+    <link type='text/css' rel='stylesheet' href='css/home.css' />
+
+    <script language="javascript" type="text/javascript">
+        /*
+      function AlinhaMenu() {
+		  var wh = $(window).height();
+		
+		  var m = (wh / 2) - 25;
+		
+		  var JSONObject = {
+			"MeioMenu": m
+		  };
+		
+		  return JSONObject;
+		}
+                */
+               
+      $(document).ready(function(){
+		  var wh = $(window).height();
+      	  var h2 = wh / 2;
+	  
+        $("#foto2").css('top', h2);
+
+        function Maranello() {
+			
+          $('#menu ul li a').removeClass('ativo');
+          $('#btn_pisomaranello').addClass('ativo');
+        }
+
+        function Veneto() {
+          $('#menu ul li a').removeClass('ativo');
+          $('#btn_pisoveneto').addClass('ativo');
+        }
+
+        $('#foto1').click(function() {
+          $("#menu").animate({ bottom: '0' }, 500);
+          $("#menu").removeClass('posicaomeio');
+          $("#menu").addClass('posicaoabaixo');
+        });
+
+        $('#foto1').mouseover(function() {
+          $("#home_maranello").addClass('home_over');
+        });
+
+        $('#foto1').mouseout(function() {
+          $("#home_maranello").removeClass('home_over');
+        });
+
+        $('#foto2').click(function() {
+          $("#menu").animate({ bottom: '0' }, 500);
+          $("#menu").removeClass('posicaomeio');
+          $("#menu").addClass('posicaoabaixo');
+        });
+
+        $('#foto2').mouseover(function() {
+          $("#home_veneto").addClass('home_over');
+        });
+
+        $('#foto2').mouseout(function() {
+          $("#home_veneto").removeClass('home_over');
+        });
+		
+		
+		var sizes = AlinhaMenu();
+
+		  $("#menu").addClass('posicaomeio');
+		
+		  if ($("#menu").hasClass('posicaomeio')) {
+			$("#menu").css('bottom', sizes.MeioMenu);
+		  }
+		
+		  $('#menu ul li a').click(function() {
+			if ( $(this).hasClass('icons') ) {
+		
+			}
+			else {
+			  $('#menu ul li a').removeClass('ativo');
+			  $(this).addClass('ativo');
+			  $("#menu").animate({ bottom: '0' }, 500);
+			  $("#menu").removeClass('posicaomeio');
+			  $("#menu").addClass('posicaoabaixo');
+			}
+		  });
+		
+		  $('#logo a').click(function() {
+			var sizes = AlinhaMenu();
+		
+			$('#menu ul li a').removeClass('ativo');
+			$("#menu").removeClass('posicaoabaixo');
+			$("#menu").animate({ bottom: sizes.MeioMenu }, 500);
+			$("#menu").addClass('posicaomeio');
+		  });
+
+      });
+	  
+	  window.onresize = function () {
+		  
+		  var sizes = AlinhaMenu();
+
+		  if ($("#menu").hasClass('posicaomeio')) {
+			$("#menu").css('bottom', sizes.MeioMenu);
+		  }
+		  
+		var wh = $(window).height();
+        var h2 = wh / 2;
+
+		$("#foto2").css('top', h2);
+
+	  }
+    </script>
+    <style>
+	.seo {
+		display:none;
+	}
+	</style>
+  </head>
+
+  <body>
+  	
+    <h1 class="seo">Allegro Buffet - Home</h1>
+    
+    <a href="#pisomaranello" id="foto1" onclick="Maranello();"></a>
+    <a href="#pisoveneto" id="foto2" onclick="Veneto();"></a>
+  </body>
+
+</html>

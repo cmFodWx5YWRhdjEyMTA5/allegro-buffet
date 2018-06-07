@@ -1,0 +1,49 @@
+body:before {
+    content: url('../images/home/maranello_01.jpg') url('../images/home/veneto_01.jpg');
+    display:none;
+}
+
+#foto1 {
+	position:absolute;
+	display: block;
+	width:100%;
+	height:50%;
+	overflow:hidden;
+	 background-position: center center;
+	 background-repeat: no-repeat;
+	 background-image: url('../images/home/maranello_02.jpg');
+	 background-size:100%;
+}
+
+#foto1:hover {
+	background-image: url('../images/home/maranello_01.jpg');
+}
+
+#foto1 img {
+	width:100%;
+	height:auto;
+}
+
+#foto2 {
+	position:absolute;
+	display: block;
+	width:100%;
+	height:50%;
+	overflow:hidden;
+	 background-position: center center;
+	 background-repeat: no-repeat;
+	 background-image: url('../images/home/veneto_02.jpg');
+	 background-size:100%;
+}
+
+#foto2:hover {
+	background-image: url('../images/home/veneto_01.jpg');
+}
+
+#foto2 img {
+	position:absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:auto;
+}

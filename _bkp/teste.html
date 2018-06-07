@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+	<!--
+		Supersized - Fullscreen Slideshow jQuery Plugin
+		Version : 3.2.7
+		Site	: www.buildinternet.com/project/supersized
+		
+		Author	: Sam Dunn
+		Company : One Mighty Roar (www.onemightyroar.com)
+		License : MIT License / GPL License
+	-->
+
+	<head>
+
+		<title>Supersized - Full Screen Background Slideshow jQuery Plugin</title>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		
+        <link rel="stylesheet" href="css/stylesheet.css" type="text/css" media="screen" />
+        
+		<link rel="stylesheet" href="css/supersized.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="theme/supersized.shutter_teste.css" type="text/css" media="screen" />
+		
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.min.js"></script>
+		
+		<script type="text/javascript" src="js/supersized.3.2.7.min.js"></script>
+		<script type="text/javascript" src="theme/supersized.shutter.js"></script>
+        <script language="javascript" type="text/javascript" src="js/ajax.js"></script>
+		
+		<script type="text/javascript">
+			
+			jQuery(function($){
+				
+				$.supersized({
+				
+					// Functionality
+					slideshow : 1,                        // Slideshow on/off
+                    autoplay : 0,                        // Slideshow starts playing automatically
+					slide_interval          :   3000,		// Length between transitions
+					transition              :   1, 			// 0-None, 1-Fade, 2-Slide Top, 3-Slide Right, 4-Slide Bottom, 5-Slide Left, 6-Carousel Right, 7-Carousel Left
+					transition_speed		:	700,		// Speed of transition
+															   
+					// Components							
+					slide_links				:	'blank',	// Individual links for each slide (Options: false, 'num', 'name', 'blank')
+					slides 					:  	[			// Slideshow Images
+											{image : 'images/veneto/01.jpg', thumb: 'images/veneto/thumbs/01.jpg'},
+                                            {image : 'images/veneto/02.jpg', thumb: 'images/veneto/thumbs/02.jpg'},
+                                            {image : 'images/veneto/03.jpg', thumb: 'images/veneto/thumbs/03.jpg'},
+                                            {image : 'images/veneto/04.jpg', thumb: 'images/veneto/thumbs/04.jpg'},
+                                            {image : 'images/veneto/05.jpg', thumb: 'images/veneto/thumbs/05.jpg'},
+                                            {image : 'images/veneto/06.jpg', thumb: 'images/veneto/thumbs/06.jpg'},
+											{image : 'images/veneto/07.jpg', thumb: 'images/veneto/thumbs/07.jpg'},
+                                            {image : 'images/veneto/08.jpg', thumb: 'images/veneto/thumbs/08.jpg'},
+                                            {image : 'images/veneto/09.jpg', thumb: 'images/veneto/thumbs/09.jpg'},
+                                            {image : 'images/veneto/10.jpg', thumb: 'images/veneto/thumbs/10.jpg'},
+                                            {image : 'images/veneto/11.jpg', thumb: 'images/veneto/thumbs/11.jpg'},
+                                            {image : 'images/veneto/12.jpg', thumb: 'images/veneto/thumbs/12.jpg'},
+											{image : 'images/veneto/13.jpg', thumb: 'images/veneto/thumbs/13.jpg'},
+                                            {image : 'images/veneto/14.jpg', thumb: 'images/veneto/thumbs/14.jpg'},
+                                            {image : 'images/veneto/15.jpg', thumb: 'images/veneto/thumbs/15.jpg'},
+                                            {image : 'images/veneto/16.jpg', thumb: 'images/veneto/thumbs/16.jpg'},
+                                            {image : 'images/veneto/17.jpg', thumb: 'images/veneto/thumbs/17.jpg'},
+                                            {image : 'images/veneto/18.jpg', thumb: 'images/veneto/thumbs/18.jpg'},
+											{image : 'images/veneto/19.jpg', thumb: 'images/veneto/thumbs/19.jpg'},
+                                            {image : 'images/veneto/20.jpg', thumb: 'images/veneto/thumbs/20.jpg'},
+                                            {image : 'images/veneto/21.jpg', thumb: 'images/veneto/thumbs/21.jpg'},
+                                            {image : 'images/veneto/22.jpg', thumb: 'images/veneto/thumbs/22.jpg'},
+                                            {image : 'images/veneto/23.jpg', thumb: 'images/veneto/thumbs/23.jpg'},
+                                            {image : 'images/veneto/24.jpg', thumb: 'images/veneto/thumbs/24.jpg'},
+											{image : 'images/veneto/25.jpg', thumb: 'images/veneto/thumbs/25.jpg'},
+                                            {image : 'images/veneto/26.jpg', thumb: 'images/veneto/thumbs/26.jpg'},
+                                            {image : 'images/veneto/27.jpg', thumb: 'images/veneto/thumbs/27.jpg'},
+                                            {image : 'images/veneto/28.jpg', thumb: 'images/veneto/thumbs/28.jpg'},
+                                            {image : 'images/veneto/29.jpg', thumb: 'images/veneto/thumbs/29.jpg'},
+                                            {image : 'images/veneto/30.jpg', thumb: 'images/veneto/thumbs/30.jpg'}
+				]
+					
+				});
+		    });
+			
+			$(document).ready(function() {
+				
+				$("#lateral").stop().animate({right : '0', avoidTransforms : true}, 300 );
+
+    var ww = $(window).width();
+            var margem = ((ww / 3) - 255) / 2;
+            var margem2 = ((ww / 3) - 330) / 2;
+
+            if (ww <= 960) {
+                    $("#thumb-tray").css('width', '230');
+                    $("#thumb-tray").css('right', '33');
+            }
+
+            if (ww > 960 && ww <= 1200) {
+                    $("#thumb-tray").css('width', '230');
+                    $("#thumb-tray").css('right', margem);
+            }
+
+            if (ww > 1200) {
+                    $("#thumb-tray").css('width', '305');
+                    $("#thumb-tray").css('right', margem2);
+            }
+			
+			$('#btn_pisoveneto').addClass('ativo');
+    });
+	
+	window.onresize = function () {
+		var ww = $(window).width();
+            var margem = ((ww / 3) - 255) / 2;
+            var margem2 = ((ww / 3) - 330) / 2;
+
+            if (ww <= 960) {
+                    $("#thumb-tray").css('width', '230');
+                    $("#thumb-tray").css('right', '33');
+            }
+
+            if (ww > 960 && ww <= 1200) {
+                    $("#thumb-tray").css('width', '230');
+                    $("#thumb-tray").css('right', margem);
+            }
+
+            if (ww > 1200) {
+                    $("#thumb-tray").css('width', '305');
+                    $("#thumb-tray").css('right', margem2);
+            }
+	};
+		    
+		</script>
+		
+	</head>
+
+<body>
+
+<a id="prevslide" class="load-item"></a>
+        <a id="nextslide" class="load-item"></a>
+
+<div id="info">
+        <div id="info_content">
+        <span class="maior">Ideal para</span> eventos mais reservados,  elegante e moderno com um lindo jardim de inverno no seu interior. Sistema multimídia e iluminação integrado, com telão de 100”, projetor hd e iluminação de Led, possibilitando uma vasta gama de cores e efeitos. <BR /><BR />
+
+    <span class="negrito">Capacidade:</span><BR />
+    180 pessoas para jantar<BR />
+    240 pessoas coquetel<BR />
+
+
+        <BR /><BR />
+
+        <span class="fechar"><a id="btn_fechar">X FECHAR</a></span>
+            </div>
+        </div>
+
+        <div id="lateral">
+          <div id="txt_lateral">
+          ESPAÇO<BR />
+          <span class="tit_destaque">VENETO</span>
+
+          <a id="btn_info"><span class="plus">+</span> info</a>
+
+          </div>
+
+          <div id="thumb-tray" class="load-item semcategorias" style="width: 290px !important;">
+
+          </div>
+        </div>
+        
+        <div id="controls">
+            <div id="slidecaption"></div>
+            <a id="tray-button"><img id="tray-arrow" src="img/arrow_close.png"/></a>
+        </div>
+</body>
+</html>
