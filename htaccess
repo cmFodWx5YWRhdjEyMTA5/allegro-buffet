@@ -1,23 +1,12 @@
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /allegrobuffet/
+RewriteBase /
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /allegrobuffet/index.php [L]
+RewriteRule . /index.php [L]
 </IfModule>
-
-
-# END WordPress
-# Use PHP70 as default
-AddHandler application/x-httpd-php70 .php
-# BEGIN custom php.ini PHP70
-<IfModule mod_suphp.c>
-    suPHP_ConfigPath /home/charm804/public_html/allegrobuffet
-</IfModule>
-# END custom php.ini
-
 
 # TN - START EXPIRES CACHING #
 ExpiresActive On
